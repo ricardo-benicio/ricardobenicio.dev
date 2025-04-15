@@ -11,3 +11,19 @@
 .menu-button span {
   @apply block h-0.5 w-full bg-white;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 1.5s infinite;
+}
