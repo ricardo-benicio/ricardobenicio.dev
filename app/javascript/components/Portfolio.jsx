@@ -2,6 +2,7 @@ import React from 'react';
 import Constellation from './Constellation';
 import WorkSection from './WorkSection';
 import AboutSection from './AboutSection';
+import ServicesSection from './ServicesSection';
 
 const Portfolio = () => {
   return (
@@ -37,6 +38,9 @@ const Portfolio = () => {
         
         {/* Seção Sobre mim */}
         <AboutSection />
+
+        {/* Seção de Serviços (Nova) */}
+        <ServicesSection />
       </div>
     </div>
   );
