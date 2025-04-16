@@ -3,6 +3,7 @@ import Constellation from './Constellation';
 import WorkSection from './WorkSection';
 import AboutSection from './AboutSection';
 import ServicesSection from './ServicesSection';
+import ContactSection from './ContactSection';
 
 const Portfolio = () => {
   return (
@@ -41,6 +42,9 @@ const Portfolio = () => {
 
         {/* Seção de Serviços (Nova) */}
         <ServicesSection />
+
+        {/* Seção de Contato */}
+        <ContactSection />
       </div>
     </div>
   );
