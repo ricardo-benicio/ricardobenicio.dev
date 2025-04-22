@@ -1,5 +1,4 @@
 import "@hotwired/turbo-rails"
-import "./controllers"
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import Portfolio from './components/Portfolio';
