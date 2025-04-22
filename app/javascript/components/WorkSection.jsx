@@ -31,7 +31,7 @@ const WorkSection = () => {
   return (
     <section className="py-20 bg-white text-black relative">
       <div className="container mx-auto px-4">
-        <h2 className="text-6xl font-bold text-center mb-16">Work</h2>
+        <h2 className="text-6xl font-bold text-center mb-16">Trabalhos</h2>
         
         <ProjectsCarousel projects={projects} />
       </div>
