@@ -18,16 +18,16 @@ const Portfolio = () => {
         {/* Seção de introdução */}
         <div className="min-h-screen flex flex-col justify-center items-center">
           <div className="text-center">
-            <h1 className="text-6xl font-bold mb-2 text-white">Hi, I'm Ricardo</h1>
-            <h2 className="text-3xl mb-6 text-white">Full-Stack Developer</h2>
+            <h1 className="text-6xl font-bold mb-2 text-white">Olá, me chamo Ricardo</h1>
+            <h2 className="text-3xl mb-6 text-white">Desenvolvedor Full-Stack</h2>
             
-            <div className="mt-16">
-              <div className="animate-bounce">
+            <div className="mt-62">
+              <div>
                 <div className="flex flex-col items-center">
                   <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-1">
                     <div className="w-1 h-3 bg-white rounded-full animate-scroll"></div>
                   </div>
-                  <p className="mt-2 text-white">Scroll !</p>
+                  <p className="mt-2 text-white">Role para baixo!</p>
                 </div>
               </div>
             </div>
