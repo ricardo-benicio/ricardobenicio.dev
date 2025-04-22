@@ -15,7 +15,7 @@ const ServicesSection = () => {
   return (
     <div className="py-20 bg-white dark:bg-black">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center mb-16 text-gray-900 dark:text-white">Services</h2>
+        <h2 className="text-5xl font-bold text-center mb-16 text-gray-900 dark:text-white">Serviços</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ServiceCard 
@@ -34,8 +34,13 @@ const ServicesSection = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <p className="text-lg mb-4 text-gray-800 dark:text-white">Contact me!</p>
-          <button className="bg-black dark:bg-white text-white dark:text-black rounded-full p-4 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
+          <p className="text-lg mb-4 text-gray-800 dark:text-white">Entre em contato comigo!</p>
+          <button 
+            onClick={() => {
+              document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-black dark:bg-white text-white dark:text-black rounded-full p-4 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
+          >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>

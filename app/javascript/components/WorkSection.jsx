@@ -1,15 +1,14 @@
 import React from 'react';
-import ProjectCard from './ProjectCard';
 import ProjectsCarousel from './ProjectsCarousel';
 
 const WorkSection = () => {
   const projects = [
     {
       id: 1,
-      title: 'YT Music',
+      title: 'Portfolio',
       type: 'Web',
-      image: '/images/ytmusic.jpg',
-      description: 'App without ads and with PIP mode to enjoy your favourite videos',
+      image: '/images/home.png',
+      description: 'Portfolio para um desenvolvedor de software',
       links: {
         demo: '#',
         code: '#'
@@ -17,10 +16,10 @@ const WorkSection = () => {
     },
     {
       id: 2,
-      title: 'FlashApp',
-      type: 'Android',
-      image: '/images/flashapp.jpg',
-      description: 'Learning aid application through the creation of various decks of flashcards',
+      title: 'OficinaPro',
+      type: 'Aplicação',
+      image: '/images/oficina.png',
+      description: 'Aplicação para uma oficina mecânica',
       links: {
         demo: '#',
         code: '#'
