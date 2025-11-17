@@ -18,14 +18,27 @@
         color: white;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }
-      
+
+      /* Scroll indicator animation
+       * Responsive Design: Works consistently across all viewport sizes
+       * Accessibility: Respects prefers-reduced-motion setting
+       */
       @keyframes scroll {
-      0% {transform: translateY(0);}
-      50% {transform: translateY(5px);}
-      100% {transform: translateY(0);}
+        0% {transform: translateY(0);}
+        50% {transform: translateY(5px);}
+        100% {transform: translateY(0);}
       }
 
-      .animate-scroll {animation: scroll 1.5s infinite;}
+      .animate-scroll {
+        animation: scroll 1.5s infinite;
+      }
+
+      /* Respect user's motion preferences - disable scroll animation if reduced motion is preferred */
+      @media (prefers-reduced-motion: reduce) {
+        .animate-scroll {
+          animation: none;
+        }
+      }
     </style>
   </head>
 
