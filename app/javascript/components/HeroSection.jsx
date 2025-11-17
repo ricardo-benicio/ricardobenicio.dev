@@ -21,38 +21,26 @@ const HeroSection = () => {
             texts="Desenvolvedor Full-Stack"
             className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-semibold"
             typingSpeed={100}
-            deletingSpeed={50}
-            pauseDuration={2000}
             loop={false}
             showCursor={true}
           />
         </h2>
 
-        {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 mb-16 max-w-md mx-auto">
-          <Button
-            variant="primary"
-            onClick={() => scrollToSection('work-section')}
-          >
+          <Button variant="primary" onClick={() => scrollToSection('work-section')}>
             Ver Projetos
           </Button>
-          <Button
-            variant="secondary"
-            onClick={() => scrollToSection('contact-section')}
-          >
+          <Button variant="secondary" onClick={() => scrollToSection('contact-section')}>
             Entre em Contato
           </Button>
         </div>
 
-        {/* Scroll indicator */}
         <div className="mt-12">
-          <div>
-            <div className="flex flex-col items-center">
-              <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-1">
-                <div className="w-1 h-3 bg-white rounded-full animate-scroll"></div>
-              </div>
-              <p className="mt-2 text-white">Role para baixo!</p>
+          <div className="flex flex-col items-center">
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-1">
+              <div className="w-1 h-3 bg-white rounded-full animate-scroll"></div>
             </div>
+            <p className="mt-2 text-white">Role para baixo!</p>
           </div>
         </div>
       </div>
