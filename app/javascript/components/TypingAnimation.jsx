@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 /**
- * TypingAnimation - Configuration defaults (optimized for readability):
+ * TypingAnimation - A reusable component that creates a typewriter effect
+ *
+ * Configuration defaults (optimized for readability):
  * - typingSpeed: 100ms - balanced, readable speed
  * - deletingSpeed: 50ms - faster deletion for better UX
  * - pauseDuration: 2000ms - 2 seconds to read the text
@@ -26,6 +28,7 @@ const TypingAnimation = ({
 
   useEffect(() => {
     if (isComplete) return;
+
     const currentText = textsArray[currentIndex];
     const shouldDelete = textsArray.length > 1;
 
