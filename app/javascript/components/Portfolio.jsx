@@ -21,7 +21,7 @@ const Portfolio = () => {
 
         {/* Seção de trabalhos */}
         <WorkSection />
-        
+
         {/* Seção Sobre mim */}
         <AboutSection />
 
