@@ -1,19 +1,35 @@
 import React from 'react';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const AboutSection = () => {
+  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.1 });
+  const [linkRef, linkVisible] = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section className="py-20 bg-black text-white relative">
       <div className="container mx-auto px-4">
-        <h2 className="text-6xl font-bold text-center mb-16">Sobre mim</h2>
-        
+        <h2
+          ref={titleRef}
+          className={`text-6xl font-bold text-center mb-16 ${titleVisible ? 'animate-fade-in' : 'animate-hidden'}`}
+        >
+          Sobre mim
+        </h2>
+
         <div className="max-w-4xl mx-auto">
-          <p className="text-xl leading-relaxed mb-8">
+          <p
+            ref={contentRef}
+            className={`text-xl leading-relaxed mb-8 ${contentVisible ? 'animate-slide-in-left animate-delay-200' : 'animate-hidden'}`}
+          >
           Sou um desenvolvedor de software formado em Sistemas de Informação, com 1 ano e 6 meses de experiência em projetos freelancer e mentorias, onde desenvolvi soluções web inovadoras. Domino tecnologias como Ruby, Ruby on Rails, JavaScript, React, PostgreSQL, RSpec e Tailwind CSS, com foco na construção de aplicações escaláveis e interfaces modernas.
           </p>
-          <div className="flex justify-center mt-12">
-            <a 
-              href="https://github.com/ricardo-benicio" 
-              target="_blank" 
+          <div
+            ref={linkRef}
+            className={`flex justify-center mt-12 ${linkVisible ? 'animate-fade-in animate-delay-400' : 'animate-hidden'}`}
+          >
+            <a
+              href="https://github.com/ricardo-benicio"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-300 flex items-center transition-colors duration-300"
             >
