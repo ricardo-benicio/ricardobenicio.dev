@@ -26,6 +26,14 @@
   animation: cursor-blink 1s step-end infinite;
 }
 
+/* Respect user's motion preferences - disable cursor blink if reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink {
+    animation: none;
+    opacity: 1; /* Keep cursor visible but static */
+  }
+}
+
 /* Gradient text effect */
 .gradient-text {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
@@ -45,6 +53,14 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Respect user's motion preferences - disable gradient animation if reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text {
+    animation: none;
+    background-position: 0% 50%; /* Static gradient at initial position */
   }
 }
 
