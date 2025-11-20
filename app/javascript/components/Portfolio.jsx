@@ -10,7 +10,7 @@ import ContactSection from './ContactSection';
 const Portfolio = () => {
   return (
     <div className="min-h-screen bg-black">
-      {/* Navbar */}
+      {/* Navbar fixo */}
       <Navbar />
 
       {/* Constellation como fundo */}
