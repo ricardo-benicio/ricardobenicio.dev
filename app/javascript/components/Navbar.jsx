@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState('hero-section');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero-section');
 
   const navLinks = [
-    { id: 'hero-section', label: 'Inicio' },
-    { id: 'work-section', label: 'Trabalhos' },
-    { id: 'about-section', label: 'Sobre' },
-    { id: 'services-section', label: 'Servicos' },
-    { id: 'contact-section', label: 'Contato' },
+    { label: 'Início', sectionId: 'hero-section' },
+    { label: 'Trabalhos', sectionId: 'work-section' },
+    { label: 'Sobre', sectionId: 'about-section' },
+    { label: 'Serviços', sectionId: 'services-section' },
+    { label: 'Contato', sectionId: 'contact-section' },
   ];
 
   useEffect(() => {
+    const sectionIds = navLinks.map(link => link.sectionId);
+
     const observerOptions = {
       root: null,
-      rootMargin: '-64px 0px 0px 0px',
-      threshold: 0.3,
+      rootMargin: '-64px 0px -50% 0px',
+      threshold: 0,
     };
 
     const observerCallback = (entries) => {
@@ -29,8 +31,8 @@ const Navbar = () => {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    navLinks.forEach((link) => {
-      const element = document.getElementById(link.id);
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
       if (element) {
         observer.observe(element);
       }
@@ -45,7 +47,7 @@ const Navbar = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       const navbarHeight = 64;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - navbarHeight;
 
       window.scrollTo({
@@ -59,33 +61,30 @@ const Navbar = () => {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800 py-4 px-6"
-      role="navigation"
-      aria-label="Main navigation"
+      aria-label="Navegação principal"
     >
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-white font-bold text-xl">
-          <button
-            onClick={() => scrollToSection('hero-section')}
-            className="hover:text-gray-300 transition-colors"
-            aria-label="Voltar ao inicio"
-          >
-            RB
-          </button>
-        </div>
+        {/* Logo/Brand */}
+        <button
+          onClick={() => scrollToSection('hero-section')}
+          className="text-white font-bold text-xl hover:text-purple-400 transition-colors"
+          aria-label="Voltar ao início"
+        >
+          RB
+        </button>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <li key={link.id}>
+            <li key={link.sectionId}>
               <button
-                onClick={() => scrollToSection(link.id)}
-                className={`text-sm font-medium transition-colors ${
-                  activeSection === link.id
-                    ? 'text-white'
-                    : 'text-gray-400 hover:text-white'
+                onClick={() => scrollToSection(link.sectionId)}
+                className={`transition-colors duration-300 ${
+                  activeSection === link.sectionId
+                    ? 'text-purple-400 font-semibold'
+                    : 'text-white hover:text-purple-400'
                 }`}
-                aria-current={activeSection === link.id ? 'page' : undefined}
+                aria-current={activeSection === link.sectionId ? 'page' : undefined}
               >
                 {link.label}
               </button>
@@ -95,7 +94,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={isMenuOpen}
@@ -106,6 +105,7 @@ const Navbar = () => {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 strokeLinecap="round"
@@ -120,6 +120,7 @@ const Navbar = () => {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 strokeLinecap="round"
@@ -132,20 +133,20 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
         <div className="md:hidden mt-4 pb-4">
           <ul className="flex flex-col space-y-4">
             {navLinks.map((link) => (
-              <li key={link.id}>
+              <li key={link.sectionId}>
                 <button
-                  onClick={() => scrollToSection(link.id)}
-                  className={`block w-full text-left text-sm font-medium transition-colors ${
-                    activeSection === link.id
-                      ? 'text-white'
-                      : 'text-gray-400 hover:text-white'
+                  onClick={() => scrollToSection(link.sectionId)}
+                  className={`w-full text-left px-4 py-2 transition-colors duration-300 ${
+                    activeSection === link.sectionId
+                      ? 'text-purple-400 font-semibold bg-gray-800/50'
+                      : 'text-white hover:text-purple-400 hover:bg-gray-800/30'
                   }`}
-                  aria-current={activeSection === link.id ? 'page' : undefined}
+                  aria-current={activeSection === link.sectionId ? 'page' : undefined}
                 >
                   {link.label}
                 </button>
