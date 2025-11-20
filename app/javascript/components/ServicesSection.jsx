@@ -22,7 +22,7 @@ const ServicesSection = () => {
   const [ctaRef, ctaVisible] = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <div className="py-20 bg-white dark:bg-black">
+    <section id="services-section" className="py-20 bg-white dark:bg-black">
       <div className="container mx-auto px-4">
         <h2
           ref={titleRef}
@@ -70,7 +70,7 @@ const ServicesSection = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
