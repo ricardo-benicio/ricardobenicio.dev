@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 import Constellation from './Constellation';
 import HeroSection from './HeroSection';
 import WorkSection from './WorkSection';
@@ -9,6 +10,9 @@ import ContactSection from './ContactSection';
 const Portfolio = () => {
   return (
     <div className="min-h-screen bg-black">
+      {/* Navbar */}
+      <Navbar />
+
       {/* Constellation como fundo */}
       <div className="fixed inset-0">
         <Constellation />

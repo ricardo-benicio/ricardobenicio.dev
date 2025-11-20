@@ -17,7 +17,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-4">
+    <section id="hero-section" className="min-h-screen flex flex-col justify-center items-center px-4 pt-16">
       <div className="text-center max-w-4xl">
         <h1
           ref={titleRef}

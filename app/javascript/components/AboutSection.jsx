@@ -7,7 +7,7 @@ const AboutSection = () => {
   const [linkRef, linkVisible] = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section className="py-20 bg-black text-white relative">
+    <section id="about-section" className="py-20 bg-black text-white relative">
       <div className="container mx-auto px-4">
         <h2
           ref={titleRef}
