@@ -5,10 +5,10 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('hero-section');
 
   const navLinks = [
-    { label: 'Inicio', sectionId: 'hero-section' },
+    { label: 'Início', sectionId: 'hero-section' },
     { label: 'Trabalhos', sectionId: 'work-section' },
     { label: 'Sobre', sectionId: 'about-section' },
-    { label: 'Servicos', sectionId: 'services-section' },
+    { label: 'Serviços', sectionId: 'services-section' },
     { label: 'Contato', sectionId: 'contact-section' },
   ];
 
@@ -39,12 +39,7 @@ const Navbar = () => {
     });
 
     return () => {
-      sectionIds.forEach((id) => {
-        const element = document.getElementById(id);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
+      observer.disconnect();
     };
   }, []);
 
@@ -52,8 +47,8 @@ const Navbar = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       const navbarHeight = 64;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navbarHeight;
 
       window.scrollTo({
         top: offsetPosition,
@@ -66,13 +61,14 @@ const Navbar = () => {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800 py-4 px-6"
-      aria-label="Navegacao principal"
+      aria-label="Navegação principal"
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo/Brand */}
         <button
           onClick={() => scrollToSection('hero-section')}
           className="text-white font-bold text-xl hover:text-purple-400 transition-colors"
+          aria-label="Voltar ao início"
         >
           RB
         </button>
